@@ -38,4 +38,9 @@ function MSE(pred_val: number[], obs_val: number[]): number{
     return error / pred_val.length;
 }
 
+function RMSE(pred_val: number[], obs_val: number[]): number{
+    const mse: number = MSE(pred_val, obs_val);
+    const rmse: number = Math.sqrt(mse);
+    return rmse
+}
 
