@@ -13,9 +13,29 @@ function getMax(arr: number[]): number{
     return max
 }
 
-function getAvg(arr: number[]): number{
-    const sum: number = arr.reduce((i, j) => i + j);
-    const average: number = sum/arr.length;
-    return average
+function getMean(arr: number[]): number{
+    const sum: number = arr.reduce((f, j) => f + j);
+    const mean: number = sum/arr.length;
+    return mean
 }
+
+function getMedian(arr: number[]): number{
+    let sorted: number[] = arr.sort(function(c, d){
+        return c-d;
+    });
+    const halved: number = Math.floor(arr.length / 2);
+    if (arr.length % 2)
+        return arr[halved];
+    return ((arr[halved - 1] + arr[halved]) / 2.0);
+}
+
+function MSE(pred_val: number[], obs_val: number[]): number{
+    let error: number = 0;
+    for (let i: number = 0; i < pred_val.length; i += 1) {
+        error += Math.pow((obs_val[i] - pred_val[i]), 2);
+    }
+
+    return error / pred_val.length;
+}
+
 
