@@ -1,1 +1,1 @@
-# Data Science Math Library
+# Statistical Math Functions Library
