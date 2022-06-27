@@ -84,20 +84,7 @@ function getStdDev(arr: number[]): number{
     return Math.sqrt(total / arr.length);
 }
 
-function MSE(pred_val: number[], obs_val: number[]): number{
-    let error: number = 0;
-    for (let i: number = 0; i < pred_val.length; i += 1) {
-        error += Math.pow((obs_val[i] - pred_val[i]), 2);
-    }
 
-    return error / pred_val.length;
-}
-
-function RMSE(pred_val: number[], obs_val: number[]): number{
-    const mse: number = MSE(pred_val, obs_val);
-    const rmse: number = Math.sqrt(mse);
-    return rmse
-}
 
 
 

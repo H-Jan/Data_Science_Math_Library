@@ -2,6 +2,7 @@
 var sample_array = [2, 4, 6, 7, 3, 4, 2, 9, 18, 55, 20, 3, 44];
 var predicted_values = [1.0, 2.9, 2.8]
 var observed_values = [-19.8, -18.2, -10.11]
+
 function getMin(arr) {
     var min = arr.reduce(function (a, b) { return Math.min(a, b); });
     return min;
@@ -97,20 +98,17 @@ function getStdDev(arr) {
 console.log("Standard Deviation:")
 console.log(getStdDev(sample_array))
 
-function MSE(pred_val, obs_val) {
-    var error = 0;
-    for (var i = 0; i < pred_val.length; i += 1) {
-        error += Math.pow((obs_val[i] - pred_val[i]), 2);
-    }
-    return error / pred_val.length;
-}
-console.log("MSE:")
-console.log(MSE(predicted_values, observed_values))
 
-function RMSE(pred_val, obs_val) {
-    var mse = MSE(pred_val, obs_val);
-    var rmse = Math.sqrt(mse);
-    return rmse;
+module.exports = {
+    getMin,
+    getMax,
+    getMean,
+    getMedian,
+    getFirstQuartile,
+    getThirdQuartile,
+    getIQR,
+    getOutliers,
+    getStdDev,
+    MSE,
+    RMSE
 }
-console.log("RMSE:")
-console.log(RMSE(predicted_values, observed_values))
