@@ -1,5 +1,5 @@
 
-var sample_array = [2, 4, 6, 7, 3, 4, 2, 9, 18, 55, 20, 3, 44];
+var sample_array = [6, 7, 3, 4, 2, 9, 18, 55, 20, 3, 44, 1010, 99, 33, 4];
 var predicted_values = [1.0, 2.9, 2.8]
 var observed_values = [-19.8, -18.2, -10.11]
 
