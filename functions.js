@@ -4,7 +4,7 @@ var predicted_values = [1.0, 2.9, 2.8]
 var observed_values = [-19.8, -18.2, -10.11]
 
 function getMin(arr) {
-    var min = arr.reduce(function (a, b) { return Math.min(a, b); });
+    const min = arr.reduce((a, b) => Math.min(a, b));
     return min;
 }
 console.log("Minimum:")
@@ -26,13 +26,14 @@ console.log("Mean:")
 console.log(getMean(sample_array))
 
 function getMedian(arr) {
-    var sorted = arr.sort(function (c, d) {
+    const new_array = [...arr]
+    new_array.sort(function (c, d) {
         return c - d;
     });
-    var halved = Math.floor(arr.length / 2);
-    if (arr.length % 2)
-        return arr[halved];
-    return ((arr[halved - 1] + arr[halved]) / 2.0);
+    var halved = Math.floor(new_array.length / 2);
+    if (new_array.length % 2)
+        return new_array[halved];
+    return ((new_array[halved - 1] + new_array[halved]) / 2.0);
 }
 console.log("Median:")
 console.log(getMedian(sample_array))
@@ -109,6 +110,4 @@ module.exports = {
     getIQR,
     getOutliers,
     getStdDev,
-    MSE,
-    RMSE
 }
